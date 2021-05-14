@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springboot-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/biyesheji
+    password: root
+    username: root
+    dbcp2:
+      max-idle: 10
+server:
+  port: 8082
+
