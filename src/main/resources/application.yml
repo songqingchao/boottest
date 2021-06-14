@@ -3,11 +3,16 @@ spring:
     name: springboot-demo
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/biyesheji
+    url: jdbc:mysql://localhost:3306/biyesheji?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     password: root
     username: root
     dbcp2:
       max-idle: 10
 server:
   port: 8082
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.songqingchao.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
