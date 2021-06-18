@@ -1,6 +1,7 @@
 package com.songqingchao.servcie;
 
 import com.songqingchao.entity.PingFen;
+import org.apache.ibatis.cursor.Cursor;
 
 import java.util.List;
 
@@ -21,4 +22,11 @@ public interface PingFenService {
      * @return
      */
     int insert(int nid);
+
+    /**
+     * 流式查询
+     * @param
+     * @return
+     */
+    Cursor<PingFen> cursor();
 }

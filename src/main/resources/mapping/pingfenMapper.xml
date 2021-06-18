@@ -22,7 +22,7 @@ into
 pingfen(nid)
 values(#{nId})
 </insert>
-<select id = "cursor" resultType="PingFen">
+<select id = "cursor" resultType="PingFen" fetchSize="-2147483648">
     select
     *
     from

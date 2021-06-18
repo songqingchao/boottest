@@ -3,11 +3,13 @@ package com.songqingchao.boottest;
 import com.songqingchao.BoottestApplication;
 import com.songqingchao.entity.PingFen;
 import com.songqingchao.servcie.PingFenService;
+import org.apache.ibatis.cursor.Cursor;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,6 +29,16 @@ class BoottestApplicationTests {
     void query() {
         List<PingFen> pingFens = pingFenService.queryPingFen(3);
         System.out.println(pingFens);
+    }
+
+    @Test
+    @Transactional
+    void cursor() {
+        Cursor<PingFen> pingFens = pingFenService.cursor();
+        pingFens.forEach( pingFen -> {
+            System.out.println(pingFen);
+        });
+
     }
 
 }

@@ -2,6 +2,7 @@ package com.songqingchao.mapper;
 
 import com.songqingchao.entity.PingFen;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.cursor.Cursor;
 
 import java.util.List;
 
@@ -31,5 +32,12 @@ public interface PingFenMapper {
      * @return
      */
      int insert(int nId);
+
+    /**
+     * 流式查询
+     * @param
+     * @return
+     */
+    Cursor<PingFen> cursor();
 
 }
