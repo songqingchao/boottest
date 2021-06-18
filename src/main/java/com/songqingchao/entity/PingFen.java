@@ -7,24 +7,33 @@ import java.math.BigDecimal;
  * 2021/6/1317:15
  */
 public class PingFen {
-    private Integer uid = 0;
-    private Integer nid = 0;
+    private Integer uId = 0;
+    private Integer nId = 0;
     private BigDecimal pingFen= BigDecimal.ZERO;
+    private String studentName = "";
 
-    public Integer getUid() {
-        return uid;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public Integer getNid() {
-        return nid;
+    public Integer getuId() {
+        return uId;
     }
 
-    public void setNid(Integer nid) {
-        this.nid = nid;
+    public void setuId(Integer uId) {
+        this.uId = uId;
+    }
+
+    public Integer getnId() {
+        return nId;
+    }
+
+    public void setnId(Integer nId) {
+        this.nId = nId;
     }
 
     public BigDecimal getPingFen() {

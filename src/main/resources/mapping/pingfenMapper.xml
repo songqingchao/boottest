@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.songqingchao.mapper.PingfenMapper">
+<mapper namespace="com.songqingchao.mapper.PingFenMapper">
     <select id = "selectById" resultType="PingFen">
     select
     *
@@ -22,5 +22,11 @@ into
 pingfen(nid)
 values(#{nId})
 </insert>
+<select id = "cursor" resultType="PingFen">
+    select
+    *
+    from
+    pingfen
+ </select>
 
 </mapper>

@@ -1,9 +1,12 @@
 package com.songqingchao.servcie.impl;
 
-import com.songqingchao.mapper.PingfenMapper;
+import com.songqingchao.entity.PingFen;
+import com.songqingchao.mapper.PingFenMapper;
 import com.songqingchao.servcie.PingFenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @user candy
@@ -12,12 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PingFenServiceImpl implements PingFenService{
     @Autowired
-    private PingfenMapper pingfenMapper;
+    private PingFenMapper pingfenMapper;
 
 
     @Override
-    public void queryPingFen(Integer uid) {
-//        pingfenMapper.selectById(123);
+    public List<PingFen> queryPingFen(int uid) {
+        return pingfenMapper.selectById(uid);
     }
     @Override
     public int insert(int nid) {
