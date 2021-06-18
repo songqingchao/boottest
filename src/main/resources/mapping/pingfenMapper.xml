@@ -16,4 +16,11 @@
     pingfen
     where uid = #{uid}
  </select>
+<insert id="insert">
+insert
+into
+pingfen(nid)
+values(#{nId})
+</insert>
+
 </mapper>

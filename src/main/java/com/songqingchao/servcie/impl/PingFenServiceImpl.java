@@ -19,4 +19,8 @@ public class PingFenServiceImpl implements PingFenService{
     public void queryPingFen(Integer uid) {
 //        pingfenMapper.selectById(123);
     }
+    @Override
+    public int insert(int nid) {
+        return pingfenMapper.insert(3);
+    }
 }
