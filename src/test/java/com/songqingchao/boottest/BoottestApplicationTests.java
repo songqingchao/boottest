@@ -3,7 +3,6 @@ package com.songqingchao.boottest;
 import com.songqingchao.BoottestApplication;
 import com.songqingchao.entity.PingFen;
 import com.songqingchao.servcie.PingFenService;
-import org.apache.ibatis.cursor.Cursor;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +33,6 @@ class BoottestApplicationTests {
     @Test
     @Transactional
     void cursor() {
-        Cursor<PingFen> pingFens = pingFenService.cursor();
-        pingFens.forEach( pingFen -> {
-            System.out.println(pingFen);
-        });
 
     }
 

@@ -6,6 +6,7 @@ import com.songqingchao.servcie.PingFenService;
 import org.apache.ibatis.cursor.Cursor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * 2021/6/1323:01
  */
 @Service
-public class PingFenServiceImpl implements PingFenService{
+public class PingFenServiceImpl implements PingFenService {
     @Autowired
     private PingFenMapper pingfenMapper;
 
@@ -23,12 +24,19 @@ public class PingFenServiceImpl implements PingFenService{
     public List<PingFen> queryPingFen(int uid) {
         return pingfenMapper.selectById(uid);
     }
+
     @Override
     public int insert(int nid) {
         return pingfenMapper.insert(3);
     }
+
     @Override
-    public Cursor<PingFen> cursor() {
-        return pingfenMapper.cursor();
+    @Transactional
+    public void cursor() {
+        Cursor<PingFen> cursor = pingfenMapper.cursor();
+        cursor.forEach((t) -> {
+            System.out.println(t.getStudentName());
+        });
+
     }
 }

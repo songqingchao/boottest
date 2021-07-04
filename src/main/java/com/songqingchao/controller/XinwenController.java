@@ -1,10 +1,9 @@
 package com.songqingchao.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.songqingchao.servcie.PingFenService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 /**
  * (Xinwen)表控制层
@@ -15,6 +14,8 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("xinwen")
 public class XinwenController {
+    @Autowired
+    private PingFenService pingFenService;
     /**
      * 服务对象
      */
@@ -22,6 +23,14 @@ public class XinwenController {
     public String xiwenhello(){
         return "xinwenhello";
     }
+
+    @RequestMapping("/cursor")
+    public void xiwenhello2(){
+         pingFenService.cursor();
+    }
+
+
+
 
 
 }

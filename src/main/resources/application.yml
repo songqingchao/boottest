@@ -9,7 +9,7 @@ spring:
     dbcp2:
       max-idle: 10
 server:
-  port: 8082
+  port: 8080
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.songqingchao.entity
