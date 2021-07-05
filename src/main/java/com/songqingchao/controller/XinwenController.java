@@ -29,8 +29,13 @@ public class XinwenController {
          pingFenService.cursor();
     }
 
+    @RequestMapping("/cursor2")
+    public void xiwenhello22(){
+        pingFenService.cursor2();
+    }
 
-
-
-
+    @RequestMapping("/transactionTest")
+    public void transactionTest(){
+        pingFenService.transactionTest();
+    }
 }

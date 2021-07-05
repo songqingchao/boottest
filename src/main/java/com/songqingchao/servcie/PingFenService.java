@@ -28,4 +28,15 @@ public interface PingFenService {
      * @return
      */
     void cursor();
+    /**
+     * 测试事务流式查询
+     * @param
+     * @return
+     */
+    void cursor2();
+
+    /**
+     * 测试无限创建transaction
+     */
+    void transactionTest();
 }
