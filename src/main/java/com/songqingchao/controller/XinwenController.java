@@ -19,9 +19,10 @@ public class XinwenController {
     /**
      * 服务对象
      */
+
     @RequestMapping("/hello")
     public String xiwenhello(){
-        return "xinwenhello";
+        return "hello,苏祁";
     }
 
     @RequestMapping("/cursor")
