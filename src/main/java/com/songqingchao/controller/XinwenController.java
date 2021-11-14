@@ -1,7 +1,9 @@
 package com.songqingchao.controller;
 
 import com.songqingchao.servcie.PingFenService;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,12 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class XinwenController {
     @Autowired
     private PingFenService pingFenService;
+    @Autowired
+    private SqlSessionTemplate sqlSessionTemplate;
+    @Autowired
+    private ApplicationContext applicationContext;
     /**
      * 服务对象
      */
 
     @RequestMapping("/hello")
-    public String xiwenhello(){
+    public String xiwenhello() throws Exception {
+        System.out.println(applicationContext.getBean("sqlSessionFactory"));
         return "hello,苏祁";
     }
 
